@@ -51,7 +51,7 @@ public class FlightRegister extends HttpServlet {
 			
 				FlightModel fModel=new FlightModel();
 				fModel.setFlightname(flightname);
-				fModel.setSource(source);
+				fModel.setSource(source);  
 				fModel.setDestination(destination);
 				fModel.setFare(fare);
 				fModel.setNumberofseats(numberofseats);
