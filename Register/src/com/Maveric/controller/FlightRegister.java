@@ -62,6 +62,7 @@ public class FlightRegister extends HttpServlet {
 				
 				if (flag) {
 					System.out.println("Flight added to DB");
+					request.getRequestDispatcher("Sucess.jsp").forward(request, response);
 				}
 				else {
 					response.sendRedirect("http://www.makemytrip.com");

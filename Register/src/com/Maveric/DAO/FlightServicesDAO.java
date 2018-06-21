@@ -17,10 +17,11 @@ public class FlightServicesDAO {
 	static final String USER = "GOVA";
 	static final String PASS = "Reddy";
 	
-	public void addFlightToDB(FlightModel fModel) {
+	public boolean addFlightToDB(FlightModel fModel) {
 	
 		Connection conn=null;
 		Statement stmt=null;
+		boolean res=false;
 		//learn Exception handling and Error
 		try
 		{
@@ -37,6 +38,12 @@ public class FlightServicesDAO {
 					+ "VALUES ('"+fModel.getFlightname()+"','"+fModel.getSource()+"','"+fModel.getDestination()+"','"+fModel.getFare()+"','"+fModel.getNumberofseats()+"','"+fModel.getAircraftname()+"');";
 			System.out.println("Query used is "+query);
 			int result=stmt.executeUpdate(query);
+			if (result==1) {
+				res=true;
+			} else {
+
+			}
+			res=false;
 			
 		}
 	catch (Exception E) {
@@ -52,6 +59,7 @@ public class FlightServicesDAO {
 					}
 			}
 			}
+		return res;
 
 		
 		
